@@ -1,0 +1,15 @@
+.icon {
+    display: flex;
+    justify-content: flex-end;
+    color: rgb(55, 55, 55);
+    margin: 10px 20px;
+    cursor: pointer;
+}
+.icon span {
+    border: 2px solid transparent;
+    font-size: 40px;
+}
+
+.icon span:hover {
+    border-color: #000000;
+}
