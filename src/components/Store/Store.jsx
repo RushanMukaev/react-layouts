@@ -39,18 +39,18 @@ export const Store = () => {
     }];
     
     let icon = "view_list"
-    let fil = <CardsView cards={products}/>
+    let render = <CardsView cards={products}/>
 
-    const [iconActual, iconState] = useState(icon);
-    const [render, renderState] = useState(fil);
+    const [iconActual, setIconActual] = useState(icon);
+    const [renderActual, setRenderActual] = useState(render);
     
     function onSwitch() {
         if(iconActual === "view_list") {
-            iconState("view_module")
-            renderState(<ListView cards={products}/>)
+            setIconActual("view_module")
+            setRenderActual(<ListView cards={products}/>)
         } else if((iconActual === "view_module")){
-            iconState("view_list")
-            renderState(<CardsView cards={products}/>)
+            setIconActual("view_list")
+            setRenderActual(<CardsView cards={products}/>)
         }
     }
     
@@ -63,7 +63,7 @@ export const Store = () => {
                 onSwitch={onSwitch}/>
             </div>
                 
-            {render}
+            {renderActual}
         </>
     )
 }
